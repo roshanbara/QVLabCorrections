@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Add CSS at the head of HTML file -->
+    <link rel="stylesheet" href="./css/main.css">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+</head>
+<body>
+		<!-- Your code goes here-->
+            <!-- <div class="topnav">
+              <span>Virtual Lab</span>
+              <a href="index.html">M/M/1</a>
+              <a href="mminf.html">M/M/inf</a>
+              <a href="mmc.html">M/M/c</a>
+              <a href="#" class="active">M/M/1/N</a>
+              <a href="mmcn.html">M/M/c/N</a>
+            </div> -->
+            <div
+              style="
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+              "
+            >
+              <h2>M/M/1/N</h2>
+            </div>
+            <div
+              class="form-group"
+              style="border: 1px solid black; margin: 10px; padding: 15px; width: 400px"
+            >
+              <label for="ar">Mean Arrival Rate:</label>
+              <input class="form-control" type="number" id="ar" />
+              <br />
+              <label for="sr">Mean Service Rate:</label>
+              <input class="form-control" type="number" id="sr" />
+              <br />
+              <label for="mc">Maximum customers in System:</label>
+              <input class="form-control" type="number" id="mc" />
+              <br />
+              <label for="slider" class="form-label">Simulation speed: </label>
+              <input
+                type="range"
+                class="form-range"
+                id="slider"
+                min="10"
+                max="2000"
+                value="1000"
+              />
+            </div>
+            <div style="margin-top: 50px">
+              <button
+                onclick="startSimulation(document.getElementById('ar').value, document.getElementById('sr').value, document.getElementById('mc').value, document.getElementById('slider').value)"
+                class="btn btn-primary"
+              >
+                Start
+              </button>
+              <button onclick="stopSimulation()" class="btn btn-primary">Stop</button>
+              <button onclick="clearChart()" class="btn btn-primary">Clear</button>
+            </div>
+            <div style="display: flex; flex-direction: row">
+              <div id="chart_div"></div>
+              <div class="table-responsive" id="table_div">
+                <table
+                  class="table table-striped text-successtable-border border-light"
+                >
+                  <thead class="border-light">
+                    <tr>
+                      <th scope="col"></th>
+                      <th scope="col"><strong>Steady State Results</strong></th>
+                      <!-- <th scope="col"><strong>Time-dependent Results</strong></th> -->
+                      <th scope="col"><strong id="ex"></strong></th>
+
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th scope="row">Avg. No. of Customers in System</th>
+                      <td id="th_cs"></td>
+                      <td id="ex_cs"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Avg. No. of Customers in Queue</th>
+                      <td id="th_cq"></td>
+                      <td id="ex_cq"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Avg. Time Spent in System</th>
+                      <td id="th_ts"></td>
+                      <td id="ex_ts"></td>
+                    </tr>
+                    <tr>
+                      <th scope="row">Avg. Service Time</th>
+                      <td id="th_st"></td>
+                      <td id="ex_st"></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <!-- Add JS at the bottom of HTML file --> 
+            <script src="./js/main.js"></script>
+            <script
+              type="text/javascript"
+              src="https://www.gstatic.com/charts/loader.js"
+            ></script>
+</body>
+</html>
